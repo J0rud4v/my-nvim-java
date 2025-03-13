@@ -7,7 +7,11 @@ return {
     },
     {
         "rcarriga/nvim-dap-ui",
-        dependencies = { "mfussenegger/nvim-dap" },
+        dependencies = {
+            "mfussenegger/nvim-dap", -- Dependencia principal
+            "nvim-neotest/nvim-nio", -- Nueva dependencia requerida
+        },
+
         config = function()
           require("configs.dapui") -- Cargar la configuración de nvim-dap-ui
         end,
