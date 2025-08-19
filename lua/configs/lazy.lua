@@ -54,14 +54,14 @@ return {
       require("configs.windsurf").setup()
     end,
   },
-  {
-    'goerz/jupytext.nvim',
-    version = '0.2.0',
-    opts = {
-      jupytext = 'jupytext',
-      format = 'py:percent',
-    },
-  },
+--  {
+--    'goerz/jupytext.nvim',
+--    version = '0.2.0',
+--    opts = {
+--      jupytext = 'jupytext',
+--      format = 'py:percent',
+--    },
+--  },
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
@@ -145,7 +145,7 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate", "MasonUninstallAll" },
     opts = function()
       return require("configs.mason")
@@ -161,13 +161,14 @@ return {
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim"
+    "mason-org/mason-lspconfig.nvim",
+    version = "v1.32.0",
   },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      { "williamboman/mason.nvim" },
-      { "williamboman/mason-lspconfig.nvim" },
+      { "mason-org/mason.nvim" },
+      { "mason-org/mason-lspconfig.nvim" },
     },
     config = function()
       require("configs.lspconfig")
