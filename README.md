@@ -20,7 +20,6 @@ Está diseñada para ser **estable**, **rápida** y fácil de extender, usando `
 - **Git integrado** (`vim-fugitive`, `gitsigns.nvim`)
 - **Barra de estado y bufferline** (`lualine.nvim`, `bufferline.nvim`)
 - **Previsualización de Markdown** con `glow.nvim`
-- **Soporte para notebooks** con `jupytext.nvim`
 - **Autopares** con `nvim-autopairs`
 - **Integración con Windsurf** *(autocompletado fantasma en algunos lenguajes)*
 
@@ -59,7 +58,6 @@ Está diseñada para ser **estable**, **rápida** y fácil de extender, usando `
 ### Extras
 - `windsurf.nvim`
 - `glow.nvim`
-- `jupytext.nvim`
 
 ---
 
