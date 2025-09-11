@@ -48,20 +48,20 @@ return {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
-    ft = { "java", "lua", "php" },
+    ft = { "java", "lua", "php", "html", "css", "javascript", "typescript" },
     config = function()
       vim.g.codeium_enabled = false
       require("configs.windsurf").setup()
     end,
   },
---  {
---    'goerz/jupytext.nvim',
---    version = '0.2.0',
---    opts = {
---      jupytext = 'jupytext',
---      format = 'py:percent',
---    },
---  },
+  --  {
+  --    'goerz/jupytext.nvim',
+  --    version = '0.2.0',
+  --    opts = {
+  --      jupytext = 'jupytext',
+  --      format = 'py:percent',
+  --    },
+  --  },
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
@@ -145,6 +145,20 @@ return {
     end,
   },
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    config = function()
+      require("configs.themes.tokyonight")
+    end
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+    config = function()
+      require("configs.themes.gruvbox")
+    end
+  },
+  {
     "mason-org/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate", "MasonUninstallAll" },
     opts = function()
@@ -190,35 +204,28 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
     branch = 'master',
     lazy = false,
     build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
     opts = {
       ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "c",
-        "cpp",
-        "python",
-        "java",
-        "javadoc",
-        "yaml",
-        "bash",
-        "json",
+        "vim", "lua", "vimdoc", "c", "cpp", "python", "java",
+        "javadoc", "yaml", "bash", "json",
       },
-      highlight = {
-        enable = true,
-      },
-      indent = {
-        enable = true,
-      },
+      highlight = { enable = true },
+      indent = { enable = true },
+      incremental_selection = { enable = true },
     },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+      require("nvim-ts-autotag").setup({
+        opts = {
+          enable_close_on_slash = true,
+        },
+      })
+    end,
   },
 }

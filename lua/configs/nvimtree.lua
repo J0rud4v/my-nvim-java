@@ -17,10 +17,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 return {
-    filters = {
-        dotfiles = true,
-        exclude = { vim.fn.stdpath "config" .. "/lua/custom", ".gitignore",".env" },
-    },
+    --filters = {
+    --    dotfiles = true,
+    --    exclude = { vim.fn.stdpath "config" .. "/lua/custom", ".gitignore",".env" },
+    --},
     disable_netrw = true,
     hijack_netrw = true,
     hijack_cursor = true,
