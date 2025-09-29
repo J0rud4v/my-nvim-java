@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local jdtls = require("jdtls")
 local jdtls_dap = require("jdtls.dap")
 
@@ -23,7 +22,6 @@ end
 local function limited_root_pattern(markers, max_levels)
     local path = vim.fn.expand("%:p:h")
     local levels = 0
-
     while path and path ~= "/" and levels < max_levels do
         for _, marker in ipairs(markers) do
             if vim.fn.filereadable(path .. "/" .. marker) == 1 or vim.fn.isdirectory(path .. "/" .. marker) == 1 then
@@ -33,7 +31,6 @@ local function limited_root_pattern(markers, max_levels)
         path = uv.fs_realpath(path .. "/..")
         levels = levels + 1
     end
-
     return nil
 end
 
@@ -77,38 +74,32 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.lemminx.setup({
-    simple_file_support = true,
+vim.lsp.config("lemminx", {
     capabilities = capabilities,
     on_attach = on_attach,
 })
 
-lspconfig.ts_ls.setup({
-    simple_file_support = true,
+vim.lsp.config("ts_ls", {
     capabilities = capabilities,
     on_attach = on_attach,
 })
 
-lspconfig.bashls.setup({
-    simple_file_support = true,
+vim.lsp.config("bashls", {
     on_attach = on_attach,
     capabilities = capabilities,
 })
 
-lspconfig.pyright.setup({
-    simple_file_support = true,
+vim.lsp.config("pyright", {
     on_attach = on_attach,
     capabilities = capabilities,
 })
 
-lspconfig.html.setup({
-    simple_file_support = true,
+vim.lsp.config("html", {
     capabilities = capabilities,
     on_attach = on_attach,
 })
 
-lspconfig.lua_ls.setup({
-    simple_file_support = true,
+vim.lsp.config("lua_ls", {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -124,7 +115,7 @@ lspconfig.lua_ls.setup({
     }
 })
 
-lspconfig.angularls.setup({
+vim.lsp.config("angularls", {
     cmd = function()
         local root = limited_root_pattern({
             "angular.json",
@@ -142,7 +133,6 @@ lspconfig.angularls.setup({
         }
     end,
 
-    simple_file_support = true,
     filetypes = { "typescript", "html" },
 
     root = limited_root_pattern({

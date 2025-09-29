@@ -176,7 +176,7 @@ return {
   },
   {
     "mason-org/mason-lspconfig.nvim",
-    version = "v1.32.0",
+    --version = "v1.32.0",
   },
   {
     "neovim/nvim-lspconfig",
