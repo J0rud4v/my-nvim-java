@@ -48,7 +48,7 @@ return {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
-    ft = { "java", "lua", "php", "html", "css", "javascript", "typescript" },
+    ft = { "java", "lua", "php", "html", "css", "javascript", "typescript", "sh" },
     config = function()
       vim.g.codeium_enabled = false
       require("configs.windsurf").setup()
