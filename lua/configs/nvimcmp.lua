@@ -2,9 +2,11 @@ local cmp = require('cmp')
 local luasnip = require('luasnip')
 
 cmp.setup({
-  --experimental = {
-  --  ghost_text = false,
-  --},
+  experimental = {
+    ghost_text = {
+      hl_group = 'LspCodeLens'
+    }
+  },
   -- el modulo lspkind no existe
   --formatting = {
   --  format = require('lspkind').cmp_format({
@@ -19,7 +21,8 @@ cmp.setup({
       luasnip.lsp_expand(args.body)
     end,
   },
-  mapping = { ['<Tab>'] = cmp.mapping(function(fallback)
+  mapping = {
+    ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
       elseif luasnip.expand_or_jumpable() then
@@ -52,10 +55,10 @@ cmp.setup({
   },
   sources = {
     --{ name = "codeium",  priority = 3 },
-    { name = 'nvim_lsp', priority = 4 },
+    { name = 'nvim_lsp', priority = 6 },
     { name = 'buffer',   priority = 1 },
     { name = 'path',     priority = 2 },
-    { name = 'luasnip',  priority = 5 },
+    { name = 'luasnip',  priority = 4 },
   },
 
   completion = {

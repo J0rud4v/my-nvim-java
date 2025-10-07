@@ -1,7 +1,7 @@
 local tokyonight = require("tokyonight")
 
 tokyonight.setup({
-  style = "storm",
+  style = "moon",
   transparent = true,
   boldest = true,
   italics = true,

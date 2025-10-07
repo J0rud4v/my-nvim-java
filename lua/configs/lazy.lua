@@ -48,7 +48,8 @@ return {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
-    ft = { "java", "lua", "php", "html", "css", "javascript", "typescript", "sh" },
+    --ft = { "java", "lua", "php", "html", "css", "javascript", "typescript", "sh" },
+    lazy = true,
     config = function()
       vim.g.codeium_enabled = false
       require("configs.windsurf").setup()
@@ -114,6 +115,13 @@ return {
     config = function()
       require('configs.lualine')
     end
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
   },
   {
     "hrsh7th/nvim-cmp",
@@ -213,7 +221,7 @@ return {
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc", "c", "cpp", "python", "java",
-        "javadoc", "yaml", "bash", "json",
+        "javadoc", "yaml", "bash", "json", "angular", "html"
       },
       highlight = { enable = true },
       indent = { enable = true },

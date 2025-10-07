@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 return {
     --filters = {
     --    dotfiles = true,
-    --    exclude = { vim.fn.stdpath "config" .. "/lua/custom", ".gitignore",".env" },
+    --    exclude = { vim.fn.stdpath "config" .. "lua/custom", ".gitignore", ".env"},
     --},
     disable_netrw = true,
     hijack_netrw = true,
@@ -50,7 +50,7 @@ return {
         },
     },
     renderer = {
-        root_folder_label = false,
+        --root_folder_label = false,
         highlight_git = false,
         highlight_opened_files = "none",
 
