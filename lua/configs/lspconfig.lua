@@ -179,6 +179,7 @@ if debug_path ~= "" then
 end
 
 vim.list_extend(bundles, test_bundles)
+local lombok_path = os.getenv ("HOME") .. "/.local/share/lombok/"
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "java",
@@ -193,6 +194,8 @@ vim.api.nvim_create_autocmd("FileType", {
     local config = {
       cmd = {
         'java',
+        '-javaagent:' .. lombok_path .. "lombok.jar",
+        '-Xbootclasspath/a:' .. lombok_path .. "lobok.jar",
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
         '-Declipse.product=org.eclipse.jdt.ls.core.product',
