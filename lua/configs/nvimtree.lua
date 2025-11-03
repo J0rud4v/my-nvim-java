@@ -33,7 +33,7 @@ return {
     view = {
         adaptive_size = false,
         side = "right",
-        width = 30,
+        width = 40,
         preserve_window_proportions = true,
     },
     git = {
@@ -49,10 +49,27 @@ return {
             resize_window = true,
         },
     },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        show_on_open_dirs = true,
+        debounce_delay = 500,
+        severity = {
+          min = vim.diagnostic.severity.HINT,
+          max = vim.diagnostic.severity.ERROR,
+        },
+        icons = {
+          hint = "󰌵",
+          info = " ",
+          warning = " ",
+          error = " ",
+        },
+    },
     renderer = {
         --root_folder_label = false,
         highlight_git = false,
         highlight_opened_files = "none",
+        highlight_diagnostics = "all",
 
         indent_markers = {
             enable = false,
@@ -64,6 +81,7 @@ return {
                 folder = true,
                 folder_arrow = true,
                 git = true,
+                diagnostics = true,
             },
 
             glyphs = {
