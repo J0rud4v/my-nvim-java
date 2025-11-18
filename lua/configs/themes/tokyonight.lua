@@ -8,7 +8,10 @@ tokyonight.setup({
   undercurl = true,
   underline = true,
   styles = {
+    comments = { italic = true },
+    keywords = { italic = true },
     sidebars = "transparent",
-    floats = "transparent",
+    --floats = "transparent",
   },
+  lualine_bold = false,
 })

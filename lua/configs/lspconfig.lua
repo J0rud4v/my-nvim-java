@@ -136,6 +136,12 @@ vim.lsp.config("lua_ls", {
 })
 vim.lsp.enable("lua_ls")
 
+vim.lsp.config("somesass_ls", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+vim.lsp.enable("somesass_ls")
+
 vim.lsp.config("angularls", {
   --  cmd = function()
   --    local root = limited_root_pattern({

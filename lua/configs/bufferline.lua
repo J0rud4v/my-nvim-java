@@ -6,7 +6,16 @@ require("bufferline").setup {
     modified_icon = " ● ",
     indicator = { style = "none" },
     hover = { enabled = true, delay = 150, reveal = { "close" } },
-    --diagnostics = "false",
+    diagnostics = "nvim_lsp",
+    diagnostics_indicator = function(count, level)
+      local icons = {
+        error = " ",
+        warning = " ",
+        info = " ",
+        hint = " ",
+      }
+      return " " .. (icons[level] or "?") .. count
+    end,
     diagnostics_update_in_insert = false,
     --numbers = "ordinal",
     offsets = {
@@ -30,7 +39,7 @@ require("bufferline").setup {
     buffer_selected = { fg = "#ffffff", bg = "#120035", bold = false },
     --separator = { fg = "#1e1e2e", bg = "#b4befe" },
     --separator_selected = { fg = "#b4befe", bg = "#b4befe" },
-    modified = { fg = "#f38ba8"},
+    modified = { fg = "#f38ba8" },
     modified_selected = { fg = "#ff0064", bg = "#120035" },
   },
 }

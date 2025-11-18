@@ -21,6 +21,8 @@ dap.configurations.python = {
 
 -- Atajos de teclado para nvim-dap
 vim.keymap.set("n", "<F5>", dap.continue, { desc = "Iniciar/Continuar depuración" })
+vim.keymap.set("n", "<leader><F5>", dap.run_last, { desc = "Inicia la ultima depuración" })
+vim.keymap.set("n", "<leader><F6>", dap.terminate, { desc = "Termina la depuración" })
 vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Paso por encima" })
 vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Paso adentro" })
 vim.keymap.set("n", "<F12>", dap.step_out, { desc = "Paso afuera" })

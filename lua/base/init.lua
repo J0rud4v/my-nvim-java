@@ -18,11 +18,6 @@ vim.o.foldlevelstart = 99
 
 
 -- configuracion de windsurf
-vim.g.codeium_enabled = false
-vim.g.codeium_filetypes_disabled_by_default = true
-vim.g.codeium_filetypes = { sh = false, env = false, dosini = false, typescript = true, java = true, lua = true}
-vim.g.codeium_disable_bindings = 1
-
 vim.api.nvim_create_user_command("WindsurfLoad", function()
   require("lazy").load({ plugins = { "windsurf.nvim" } })
 end, { nargs = 0 })

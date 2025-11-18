@@ -11,6 +11,8 @@ return {
         'html-lsp',
         'pyright',
         'debugpy',
+        'angular-language-server',
+        'some-sass-language-server'
     },
 
     max_concurrent_installers = 10,
