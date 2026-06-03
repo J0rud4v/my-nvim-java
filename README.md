@@ -63,11 +63,7 @@ Está diseñada para ser **estable**, **rápida** y fácil de extender, usando `
 - **Node.js** (para LSPs como `ts_ls`)
 - **Python 3** (para `pyright`)
 - **Git**
-- **Glow** (para previsualizar Markdown)
 
-Instalar Glow en Debian/Ubuntu:
-
-    sudo apt install glow
 
 ---
 
