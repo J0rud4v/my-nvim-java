@@ -19,9 +19,7 @@ Está diseñada para ser **estable**, **rápida** y fácil de extender, usando `
 - **Resaltado avanzado** con `nvim-treesitter`
 - **Git integrado** (`vim-fugitive`, `gitsigns.nvim`)
 - **Barra de estado y bufferline** (`lualine.nvim`, `bufferline.nvim`)
-- **Previsualización de Markdown** con `glow.nvim`
 - **Autopares** con `nvim-autopairs`
-- **Integración con Windsurf** *(autocompletado fantasma en algunos lenguajes)*
 
 ---
 
@@ -55,9 +53,6 @@ Está diseñada para ser **estable**, **rápida** y fácil de extender, usando `
 - `lualine.nvim`
 - `bufferline.nvim`
 
-### Extras
-- `windsurf.nvim`
-- `glow.nvim`
 
 ---
 
@@ -134,9 +129,6 @@ Instalar Glow en Debian/Ubuntu:
 
 - **Debugger no funciona**:  
   Verifica adaptadores y dependencias de `nvim-dap` para Java.
-
-- **Windsurf no autocompleta**:  
-  Está limitado a ciertos lenguajes (`java`, `lua`, `php`) por defecto.
 
 ---
 
