@@ -1,6 +1,6 @@
 # Configuración de Neovim con JDTLS, LSPs y DAP
 
-Este repositorio contiene mi configuración personalizada de **Neovim 0.10+** orientada al desarrollo en **Java** con soporte para depuración y múltiples lenguajes mediante LSPs.  
+Este repositorio contiene mi configuración personalizada de **Neovim 0.11+** orientada al desarrollo en **Java** con soporte para depuración y múltiples lenguajes mediante LSPs.  
 Está diseñada para ser **estable**, **rápida** y fácil de extender, usando `lazy.nvim` como gestor de plugins.
 
 ## ✨ Características principales
@@ -63,7 +63,7 @@ Está diseñada para ser **estable**, **rápida** y fácil de extender, usando `
 
 ## ⚙️ Requisitos
 
-- **Neovim 0.10+**
+- **Neovim 0.11+**
 - **JDK 21 o superior**
 - **Node.js** (para LSPs como `ts_ls`)
 - **Python 3** (para `pyright`)
